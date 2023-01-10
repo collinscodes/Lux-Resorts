@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome.B/css/all.css">
+    <script src="hotel.js"></script>
+    <style>
+         *{
+            box-sizing: border-box;
+        }
+        body{
+             margin: 0;
+             border: 0;
+             font-family: sans-serif;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hotelicon{
+          margin-left: 100px;
+          width: 0px;
+        }
+        .hotelicon img{
+          width: 50px;
+        }
+        .hotelname h1{
+            font-size: 25px;
+            margin-left: -50px;
+            margin-top: 10px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 35px;
+        }      
+        .navbar-links ul{
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar-links li{
+            list-style: none;
+        }
+        .navbar-links li a{
+             text-decoration: none;
+             margin-right: 40px;
+             padding: 6px;
+             display: block;
+             font-size: 15px;
+             color: black;
+             font-weight: bold;
+             font-size: 18px;
+             font-family: "Trebuchet MS", Helvetica, sans-serif;
+        }
+        .navbar-links ul li a.active {
+           color: orangered;
+        }   
+        .navbar-links li a button{
+             height: 38px;
+             padding: 0 10px;
+             border: 0;
+             background-color: orangered;
+             cursor: pointer;
+             color: #f1f1f1;
+             transition: .3s linear;
+             margin-right: 80px;
+             font-weight: bold;
+             margin-top: -5px;
+        }
+        .contact{
+            display: flex;
+            background-color: rgb(231, 231, 231);
+            padding-top: 60px;
+            padding-left: 150px;
+            width: 100%;
+        }
+        .contact h3{
+            font-family:  "Trebuchet MS", Helvetica, sans-serif;
+            font-weight: bold;
+            color: orangered;
+        }
+        .contact p{
+            margin-left: 35px;
+            font-family:  "Trebuchet MS", Helvetica, sans-serif;
+        }
+        .contact h5{
+            font-family:  "Trebuchet MS", Helvetica, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: orangered;
+        }
+        .icon{
+            display: flex;
+        }
+        .icon i{
+            margin-right: 20px;
+            color: orangered;
+        }
+        .icon svg{
+            margin-right: 20px;
+            color: orangered;
+        }
+        .add{
+            margin-top: 30px;
+        }
+        .social{
+            margin-left: 30px;
+            margin-top: -15px;
+        }
+        .social i{
+            height: 35px;
+            width: 30px;   
+            border-radius: 50%;
+            color: black; 
+            margin: 0px, 5px;
+            line-height: 35px;
+            text-align: center;
+            font-size: 25px;
+            color: orangered;
+        }
+        .social i:hover{
+            color: black;
+            transition: 1s ease;
+            transform: rotate(360deg);
+        }
+        .container{
+            margin-left: 300px;
+        }
+        .input-box p{
+            margin-top: 20px;
+            margin-left: -5px;
+            font-size: 18px;
+        }
+        .input-box input{
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid  black;
+            width: 400px;
+            outline: none;
+        }
+        .input-box textarea{
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid  black;
+            width: 400px;
+            outline: none;
+            height: 100px;
+            margin-top: -10px;
+        }
+        .submit-btn{
+               background-color: orangered;
+               color: #fff;
+               border: none;
+               height: 38px;
+               width: 400px;
+               font-size: 12px;
+               padding: 0 13px;
+               box-sizing: border-box;
+               outline: none;
+               color: #fff;
+               cursor: pointer;
+               margin-top: 10px;
+               margin-bottom: 50px;
+           }
+    </style>
+</head>
+<body>
+    <nav class="navbar">     
+        <div class="hotelicon">
+          <img src="hotelicon.png">
+        </div>
+        <div class="hotelname">
+          <h1>LUX Resort</h1>
+         </div>
+        <a href="#" class="toggle-button">
+             <span class="bar"></span>
+             <span class="bar"></span>
+             <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+             <ul>
+                 <li><a href="hotel.html">HOME</a></li>
+                 <li><a href="hotelabout.html">ABOUT US</a></li>
+                 <li><a href="hotelroom.html">SUITES & ROOMS</a></li>
+                 <li><a href="hotelcontact.html">CONTACT US</a></li>
+                 <li><a href="hotelbook.html"><button>BOOK NOW</button></a></li>
+             </ul>
+        </div>
+   </nav>
+   <div class="slider">
+    <img src="hotelcontact.jpg" alt="" width="100%" height="300px">
+</div>
+    <div class="contact">
+        <div class="contact-body">
+            <h3>Contact Info</h3>
+            <div class="add">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"  fill="currentColor" class="bi
+                bi-geo-alt-fill" viewBox="0 0 16 16">
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0
+                6z"/>
+                </svg>
+                <h5>Address</h5>
+                </div>
+                <p>09 Highway st,Asokoro</p>
+            </div>
+            <div class="phone">
+                <div class="icon">
+                    <i class="fa fa-phone fa-1x" aria-hidden="true" color="rgb(45, 170, 45)"></i>
+                    <h5>Phone</h5>
+                </div>
+                <p>+234 810 808 7526</p>
+            </div>               
+            <div class="fax">
+                <div class="icon">
+                    <i class="fa fa-fax fa-1x" aria-hidden="true" color="rgb(45, 170, 45)"></i>
+                    <h5>Fax</h5>
+                </div>
+                <P>1-234-567-8900 </P>
+            </div>
+            <div class="mail">
+                <div class="icon">
+                    <i class="fa fa-envelope fa-1x" aria-hidden="true"></i> 
+                    <h5>Email</h5>
+                </div>
+                <P>awoducollins@gmail.com</P>
+            </div>
+            <div class="work">
+                <div class="icon">
+                    <i class="fa fa-clock fa-1x" aria-hidden="true"></i>
+                    <h5>Working hours</h5>
+                </div>
+                <P>24hrs Service</P>
+            </div>
+            <div class="social">
+                <a href=""><i class="fab fa-twitter fa-4x"></i></a>
+                <a href=""><i class="myinsta fab fa-instagram fa-4x"></i></a>
+                <a href=""><i class="fab fa-facebook fa-4x"></i></a>
+                <a href=""><i class="fab fa-snapchat fa-4x"></i></a>
+            </div> 
+        </div>
+        <div class="container">
+            <div class="input-box">
+                <h3>Leave us your info</h3>
+           <form>
+            <p>Email</p>
+           <input type="email" placeholder="Enter a valid Email Adress" required>
+           <p>Name</p>
+           <input type="text" placeholder="Enter your Name" required>
+           <p>Message</p>
+           <textarea  placeholder="Enter your message" required></textarea>
+          </form>
+           <button type="submit" class="submit-btn">SUBMIT</button>  
+            </div>
+        </div>
+    </div>
+</body>
+</html>

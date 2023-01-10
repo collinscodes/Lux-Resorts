@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome.B/css/all.css">
+    <script src="hotel.js"></script>
+    <style>
+         *{
+            box-sizing: border-box;
+        }
+        body{
+             margin: 0;
+             border: 0;
+             font-family: sans-serif;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+       
+        .hotelname h1{
+            font-family: 'Dancing Script', cursive;
+            font-size: 40px;
+            margin-left: 100px;
+        }      
+        .navbar-links ul{
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar-links li{
+            list-style: none;
+        }
+        .navbar-links li a{
+             text-decoration: none;
+             margin-right: 40px;
+             padding: 6px;
+             display: block;
+             font-size: 15px;
+             color: black;
+             font-weight: bold;
+             font-size: 20px;
+             font-family: "Trebuchet MS", Helvetica, sans-serif;
+        } 
+        .navbar-links ul li a:hover{
+           color: orangered;
+        }  
+        .navbar-links li a button{
+             height: 38px;
+             padding: 0 10px;
+             border: 0;
+             background-color: orangered;
+             cursor: pointer;
+             color: #f1f1f1;
+             transition: .3s linear;
+             margin-right: 80px;
+             font-weight: bold;
+             margin-top: -5px;
+        }
+
+         img{
+          width: 100%;
+          box-shadow: 0 1px 2px #0003;
+         }
+         .swiper{
+          height: 450px;
+          margin-bottom: 20px;
+         }
+         .swiper-slide{
+          text-align: center;
+          align-items: center;          
+         }
+         .swiper-img{
+          position: absolute;
+          width: 100%;
+         }
+         .swiper-note{
+          width: 100%;
+          position: relative;
+          margin-top: 100px;
+         }
+         .swiper-note h1{
+                text-align: center;
+                color: white;
+                font-size: 4vw;
+                font-family: 'Lobster', cursive;
+                margin-top: 70px;
+                font-weight: bold;
+        }
+
+       
+      .bookroom{
+        margin: 0 auto;
+        background: #eeede5;
+        padding: 20px;       
+        max-width: 90%;
+      }
+      .book{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+      .bookroom p{
+        font-family:  "Trebuchet MS", Helvetica, sans-serif;
+        font-weight: bold;
+      }
+      .checkin{
+        margin-right: 30px;
+      }
+      .checkin input{
+        padding: 8px 12px;
+        color: #333333;
+        background-color: #fff;
+        border: 1px solid rgb(51, 51, 51);
+        cursor: pointer;
+        margin-top: -50px;
+      }
+      .checkin input:focus,
+      .checkin input:hover{
+        outline: none;
+        border: 1px solid #bbbbbb;
+        transition: 1s;
+      }
+      .checkout{
+        margin-right: 30px;
+      }
+      .checkout input{
+        padding: 8px 12px;
+        color: #333333;
+        background-color: #fff;
+        border: 1px solid rgb(51, 51, 51);
+        cursor: pointer;
+        margin-top: -50px;
+      }
+      .checkout input:focus,
+      .checkout input:hover{
+        outline: none;
+        border: 1px solid #bbbbbb; 
+        transition: 1s;       
+      }
+      .Adult{
+        margin-right: 30px;
+      }
+      .children{
+        margin-right: 30px;
+      }
+      .rooms{
+        margin-right: 30px;
+      }
+      .select{
+        margin-top: -50px;
+        padding: 10px 14px;
+        color: #333333;
+        background-color: #fff;
+        border: 1px solid rgb(51, 51, 51);
+        cursor: pointer;
+      }
+      .select:focus,
+      .select:hover{
+        outline: none;
+        border: 1px solid #bbbbbb;
+        transition: 1s;
+      }
+      .check{
+        height: 40px;
+        padding: 0 10px;
+        border: 0;
+        background-color: orangered;
+        cursor: pointer;
+        color: #f1f1f1;
+        transition: .3s linear;
+        font-size: 13px;
+        font-family:  "Trebuchet MS", Helvetica, sans-serif;
+        margin-top: 30px;
+      }
+      .body1{
+        margin-top: 100px;
+        margin-left: 120px;
+        display: flex;
+        align-items: center;
+      }
+      .tribute{
+        margin-right: 40px;
+      }
+      .tribute h1{
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 40px;
+      }
+      .tribute p{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        text-align: center;
+      }
+      .body1img1{
+        z-index: 10;
+        margin-right: -150px;
+      }
+      .new{
+        text-align: center;
+        align-items: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 25px;
+        margin-top: 80px;
+        font-weight: bold;
+        margin-right: 90px;
+      }
+      .poolsuite{
+        margin-top: 40px;
+        display: flex;
+        margin-left: 150px;
+        align-items: center;
+      }     
+      .poolsuiteimg{
+        position: relative;
+      }
+      .image-img{
+        display: block;
+        width: 100%;
+      }
+      .image-overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.8s;
+      }
+      .image-title{
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .image-description{
+        font-size: 1.25em;
+        margin-top: 0.25em;
+      }
+      .image-overlay:hover{
+        opacity: 1;
+      }
+      .poolsuitebody{
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      .poolsuite-btn{
+        height: 40px;
+        padding: 0 10px;
+        border: 0;
+        background-color: orangered;
+        cursor: pointer;
+        color: #f1f1f1;
+        transition: .3s linear;
+        font-size: 13px;
+        font-family:  "Trebuchet MS", Helvetica, sans-serif;
+      }
+      .seasuite{
+        margin-top: 40px;
+        display: flex;
+        margin-left: 130px;
+        align-items: center;
+      }
+      .seasuitebody{
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin-right: 90px;
+      }
+      .amenities-title{
+        text-align: center;
+        align-items: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 25px;
+        margin-top: 80px;
+        font-weight: bold;
+      }
+      .amenities1{
+        display: flex;
+        margin: auto;
+        text-align: center;
+      }
+      .amenities1 h5{
+       font-weight: bold;
+       font-size: 18px;
+       margin-top: 20px;
+       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+     }
+      .wifi{
+        width: 180px;
+        height: 150px;
+        text-align: center;
+        background-color: #efefef;
+        padding-top: 30px;
+        margin-left: 280px;
+        margin-top: 40px;
+        margin-right: 60px;
+      }
+      .wifi{
+        transition: 1s;
+      }
+      .wifi:hover{
+        transform: scale(1.2);
+        z-index: 2;
+      }
+      .parking{
+        width: 180px;
+        height: 150px;
+        text-align: center;
+        background-color: #efefef;
+        padding-top: 30px;
+        margin-top: 40px;
+        margin-right: 60px;
+      }
+      .parking{
+        transition: 1s;
+      }
+      .parking:hover{
+        transform: scale(1.2);
+        z-index: 2;
+      }
+      .gym{
+        width: 180px;
+        height: 150px;
+        text-align: center;
+        background-color: #efefef;
+        padding-top: 30px;
+        margin-top: 40px;
+        margin-right: 60px;
+      }
+      .gym{
+        transition: 1s;
+      }
+      .gym:hover{
+        transform: scale(1.2);
+        z-index: 2;
+      }
+      .hospital{
+        width: 180px;
+        height: 150px;
+        text-align: center;
+        background-color: #efefef;
+        padding-top: 30px;
+        margin-top: 40px;
+        margin-right: 60px;
+      }
+      .hospital{
+        transition: 1s;
+      }
+      .hospital:hover{
+        transform: scale(1.2);
+        z-index: 2;
+      }
+      .amenities2{
+        display: flex;
+        margin: auto;
+        text-align: center;
+      }
+      .amenities2 h5{
+       font-weight: bold;
+       font-size: 18px;
+       margin-top: 20px;
+       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+     }
+     .laundry{
+        width: 180px;
+        height: 150px;
+        text-align: center;
+        background-color: #efefef;
+        padding-top: 30px;
+        margin-left: 280px;
+        margin-top: 40px;
+        margin-right: 60px;
+      }
+      .laundry{
+        transition: 1s;
+      }
+      .laundry:hover{
+        transform: scale(1.2);
+        z-index: 2;
+      }
+      .air{
+        width: 180px;
+        height: 150px;
+        text-align: center;
+        background-color: #efefef;
+        padding-top: 30px;
+        margin-top: 40px;
+        margin-right: 60px;
+      }
+      .air{
+        transition: 1s;
+      }
+      .air:hover{
+        transform: scale(1.2);
+        z-index: 2;
+      }
+      .room{
+        width: 180px;
+        height: 150px;
+        text-align: center;
+        background-color: #efefef;
+        padding-top: 30px;
+        margin-top: 40px;
+        margin-right: 60px;
+      }
+      .room{
+        transition: 1s;
+      }
+      .room:hover{
+        transform: scale(1.2);
+        z-index: 2;
+      }
+      .customer{
+        width: 180px;
+        height: 150px;
+        text-align: center;
+        background-color: #efefef;
+        padding-top: 30px;
+        margin-top: 40px;
+        margin-right: 60px;
+      }
+      .customer{
+        transition: 1s;
+      }
+      .customer:hover{
+        transform: scale(1.2);
+        z-index: 2;
+      }
+      .news-section{
+        margin-top: 80px;
+        display: flex;
+      }
+      .news{
+        margin-left: 150px;
+        margin-right: 100px;
+      }
+      .news h3{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 27px;
+        font-weight: bold;
+      }
+      .news p{
+        font-family: "Trebuchet MS", Helvetica, sans-serif;
+        margin-top: 10px;
+      }
+      .news a{
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      }
+      .news-slider{
+        display: flex;
+      }
+      .news1 {
+        padding: 10px 10px;
+        margin-right: 50px;
+      }
+      .news-slider h5{
+        font-weight: bold;
+        font-family: "Trebuchet MS", Helvetica, sans-serif;
+        margin-top: 10px;
+      }
+      .news-slider p{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 18px;
+      }
+      .news-slider b{
+        font-weight: 50;
+        font-size: 13px;
+      }
+      .news-slider a{
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+      }
+      .news2 {
+        padding: 10px 10px;
+      }
+      .prevnews-btn{
+        border: none;
+        outline: none;
+        background-color: orangered;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+        padding: 5px 8px;
+        margin-left: 580px;
+        margin-right: 315px;
+        margin-top: 10px;
+      }
+      .nextnews-btn{
+        border: none;
+        outline: none;
+        background-color: orangered;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+        padding: 5px 8px;
+        margin-top: 10px;
+      }
+      .news-btn:hover{
+        background-color: #111;
+      }
+      .foot-section{
+        margin-top: 100px;
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-top: 60px;
+        padding-bottom: 40px;
+        background-color: lightseagreen;
+      }
+      .foot{
+        display: flex;
+      }
+      .footname{
+        margin-left: 50px;
+        margin-right: 150px;
+      }
+      .footname img{
+        width: 40px;
+      }
+      .footname h1{
+        margin-left: 50px;
+        margin-top: -35px;
+        font-family: 'Dancing Script', cursive;
+        font-size: 25px;
+        margin-bottom: 20px;
+      }
+      .footname i{
+        height: 35px;
+        width: 35px;   
+        border-radius: 50%;
+        color: orangered; 
+        margin: 0px, 5px;
+        line-height: 35px;
+        text-align: center;
+        font-size: 25px;
+      }
+      .foot h3{
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: orangered;
+      }
+      .foot a{
+        text-decoration: none;
+        color: black;
+      }
+      .about{
+        margin-right: 100px;
+      }
+      .resources{
+        margin-right: 100px;
+      }
+      .contact{
+        margin-right: 100px;
+      }
+      .line{
+        height: 7px;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: black;
+      }
+      .copy{
+        align-items: center;
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+  <nav class="navbar">     
+    
+    <div class="hotelname">
+      <h1>LUX Resort</h1>
+     </div>
+    <a href="#" class="toggle-button">
+         <span class="bar"></span>
+         <span class="bar"></span>
+         <span class="bar"></span>
+    </a>
+    <div class="navbar-links">
+         <ul>
+             <li><a href="hotel.html">HOME</a></li>
+             <li><a href="hotelabout.html">ABOUT US</a></li>
+             <li><a href="hotelroom.html">SUITES & ROOMS</a></li>
+             <li><a href="hotelcontact.html">CONTACT US</a></li>
+             <li><a href="hotelbook.html"><button>BOOK NOW</button></a></li>
+         </ul>
+    </div>
+</nav>
+    
+    <main>
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="swiper-img">
+              <img src="hotel1.jpg" alt="">
+            </div>
+            <div class="swiper-note">
+              <h1>We offer you the best Luxury hotel with <br> an impressive history</h1>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-img">
+              <img src="hotel2.jpg" alt="">
+            </div>
+            <div class="swiper-note">
+              <h1>Make your plan and enjoy your vacation with <br> Lux Resorts today</h1>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-img">
+              <img src="hotel3.jpg" alt="">
+            </div>
+            <div class="swiper-note">
+              <h1>Always deliver more than expected</h1>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-img">
+              <img src="hotel4.jpg" alt="">
+            </div>
+            <div class="swiper-note">
+              <h1>Let's discover the world together <br> in Lux Resorts</h1>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-img">
+              <img src="hotel5.jpg" alt="">
+            </div>
+            <div class="swiper-note">
+              <h1>Amazing Suites in Lux Resorts <br> & a lot of Services </h1>
+            </div>
+          </div>
+          
+          ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+      
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="hotel.js"></script>
+     
+
+        <div class="bookroom">
+          <div class="book">
+            <div class="checkin">
+              <p>CHECK IN</p>
+              <input type="date" placeholder="Input date" required>
+            </div>
+            <div class="checkout">
+              <p>CHECK OUT</p>
+              <input type="date" placeholder="Input date" required>
+            </div>
+            <div class="Adult">
+              <p>ADULT</p>
+              <select class="select">
+                <option disabled selected>No Of Adults</option>
+                <option value="1 Adult">1 Adult</option>
+                <option value="2 Adults">2 Adults</option>
+                <option value="3 Adults">3 Adults</option>
+                <option value="4 Adults">4 Adults</option>
+                <option value="Others">Others</option>
+              </select>  
+            </div>
+            <div class="children">
+                <p>CHILDREN</p>
+                <select class="select">
+                  <option disabled selected> No Of Children</option>
+                  <option value="1 CHILD">1 Child</option>
+                  <option value="2 Children">2 Children</option>
+                  <option value="3 Children">3 Children</option>
+                  <option value="4 Children">4 Children</option>
+                  <option value="Others">Others</option>
+                </select>  
+            </div>
+            <div class="rooms">
+              <p>ROOMS</p>
+              <select class="select">
+                <option disabled selected>No Of Rooms</option>
+                <option value="1 Room">1 Room</option>
+                <option value="2 Rooms">2 Rooms</option>
+                <option value="3 Rooms">3 Rooms</option>
+                <option value="4 Rooms">4 Rooms</option>
+                <option value="Others">Others</option>
+              </select>  
+            </div>           
+                <button class="check">CHECK AVAILABILITY</button>
+          </div>
+        </div>
+
+        <div class="body1">
+          <div class="tribute">
+            <h1>Here Is a Tribute <br> To good Life!</h1>
+            <p>Cheers to good life as we usher you into a new dimension of <br> hosiptality you have never experienced before in your life. <br>  We hope you are excited to see what we have in store for you,<br> your families, loved ones or your business partners.</p>
+          </div>
+          <div class="body1img1">
+            <img src="hotelbody1.jpg"  height="200px">
+            </div>
+            <div class="body2img2">
+             <img src="hotelbody2.jpg" width="200px" height="300px">
+          </div>
+        </div>
+
+      <div class="new">New Arrivals</div>
+      <div class="arrivals">
+        <div class="poolsuite">
+          <div class="poolsuiteimg">
+            <img class="image-img" src="hotelarrivals1.jpg" alt="" width="1000px" height="400px">
+          <div class="image-overlay">
+            <div class="image-title">Private Pool Suite</div>
+            <div class="image-description">
+              <p>Available Now!</p>
+            </div>
+          </div>
+        </div>
+          <div class="poolsuitebody">
+            <h1>Private Pool Suite</h1>
+            <p>Lux Resorts' Private Pool Suite is a 5-star luxury suite offering <br> a adults-only experience to the guests. With all-inclusive dining, <br> a fantastic private beach and guest suites with a private pool <br> you are sure to get the perfect holiday in paradise</p>
+            <p>Guest Rating: 8.5 (Very Good)</p>
+            <p>Price From: $5,000</p>
+          <button class="poolsuite-btn">CHECK AVAILABILITY</button>       
+          </div> 
+        </div>
+        <div class="seasuite">
+          <div class="seasuitebody">
+            <h1>Sea View Suite</h1>
+            <p>Lux Resorts' Sea View Suite is a 5-star luxury suite offering <br> a adults-only experience to the guests. It is situated right, <br> on the water's edge, offering immediate access to the sparkling blue <br> waters of the Niger Rivers. You are sure to get the perfect holiday in paradise</p>
+            <p>Guest Rating: 7.5 (Very Good)</p>
+            <p>Price From: $3,500</p>
+          <button class="poolsuite-btn">CHECK AVAILABILITY</button>       
+          </div>
+          <div class="poolsuiteimg">
+            <img src="hotelarrivals2.jpg" alt="" width="1000px" height="400px">
+            <div class="image-overlay">
+              <div class="image-title">Sea View Suite</div>
+              <div class="image-description">
+                <p>Available Now!</p>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+
+      <div class="amenities-title">Hotel Amenities</div>
+      <div class="amenities1">
+        <div class="wifi">
+          <i class="fa fa-wifi fa-3x"></i>
+           <h5>FREE WIFI</h5>
+        </div>
+        <div class="parking">
+             <i class="fa fa-parking"></i>
+             <i class="fa fa-car fa-3x"></i>
+             <h5>FREE PARKING</h5>
+        </div>
+        <div class="gym">
+          <i class="fa fa-dumbbell fa-3x"></i>
+           <h5>GYM SERVICES</h5>
+        </div>
+        <div class="hospital">
+          <i class="fa fa-hospital fa-3x"></i>
+           <h5>CLINIC</h5>
+        </div>
+      </div>
+      <div class="amenities2">
+        <div class="laundry">
+          <i class="fa fa-sink fa-3x"></i>
+           <h5>LAUNDRY SERVICES</h5>
+        </div>
+        <div class="air">
+             <i class="fa fa-fan fa-3x"></i>
+             <h5>AIR CONDITIONED ROOMS</h5>
+        </div>
+        <div class="room">
+          <i class="fa fa-key fa-3x"></i>
+           <h5>ROOM SERVICES</h5>
+        </div>
+        <div class="customer">
+           <i class="fa fa-phone fa-3x"></i>
+           <h5>CUSTOMER SUPPORT</h5>
+        </div>
+      </div>
+
+      <div class="news-section">
+        <div class="news">
+          <h3>News & Events</h3>
+          <p>We regularly post about the newest <br> updates about latest news and development <br> regarding our Hotel.</p>
+          <a href="">FULL POSTS</a>
+        </div>
+        <div class="news-slider">
+          <div class="news1">
+          <img src="hotelnews1.jpg" width="300px" height="150px" class="slider-img">
+          <h5>Aliko Dangote visit to Lux Resorts</h5>
+          <b>August 30, 2022. 1month ago by Akinbade Jide </b>
+          <p> Dangote during one of his many <br> business trips lodged into Lux Resorts.</p>
+          <a href="">READ MORE</a>
+        </div>
+        <div class="news2">
+          <img src="hotelnews2.jpg" width="300px" height="150px" class="slider-img">
+          <h5>Tony Elumelu Board meeting</h5>
+          <b>September 23, 2022. 1week ago by Opara peters </b>
+          <p>Tony Elumelu held one of his many <br> board meeting at Lux Resorts.</p>
+          <a href="">READ MORE</a>
+        </div>
+      </div>
+      </div>
+      <button class="prevnews-btn">PREV</button>
+      <button class="nextnews-btn">NEXT</button>
+       
+      <footer>
+        <div class="foot-section">
+          <div class="foot">
+            <div class="footname">
+              <img src="hotelicon.png"><h1>LUX Resort</h1>
+              <p>We offer you the best luxury resort with an impressive <br> history and discover your paradise.</p>
+              <a href=""><i class="fab fa-twitter fa-2x"></i></a>
+              <a href=""><i class="myinsta fab fa-instagram fa-2x"></i></a>
+              <a href=""><i class="fab fa-facebook fa-2x"></i></a>
+              <a href=""><i class="fab fa-snapchat fa-2x"></i></a>
+            </div>
+            <div class="about">
+                <h3>About Us</h3>
+                <p><a href="hotel.html">Home</a></p>
+                <p><a href="hotelabout.html">About Us</a></p>
+                <p><a href="">FAQs</a></p>
+                <p><a href="">Reviews</a></p>
+                <p><a href="">Stories</a></p>
+            </div>
+            <div class="resources">
+              <h3>Privacy</h3>
+              <p><a href="">Privacy</a></p>
+              <p><a href="">Policy</a></p>
+              <p><a href="">Payments</a></p>
+              <p><a href="">Terms</a></p>
+          </div>
+          <div class="contact">
+            <h3>Contact Us</h3>
+            <p> <a href="hotelabout.html">About Us</a></p>
+            <p> <a href="">Menu</a></p>
+            <p> <a href="hotelcontact.html">Contact</a></p>
+        </div>
+        </div>
+             <hr class="line">
+             <div class="copy">
+              <p>&copy; Copyright 2022. All Right reserved</p>
+             </div>
+        </div>
+      </footer>
+</body>
+</html>

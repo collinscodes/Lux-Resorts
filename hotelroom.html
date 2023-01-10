@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome.B/css/all.css">
+    <script src="hotel.js"></script>
+    <style>
+       *{
+            box-sizing: border-box;
+        }
+        body{
+             margin: 0;
+             border: 0;
+             font-family: sans-serif;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hotelicon{
+          margin-left: 100px;
+          margin-right: -65px;
+          margin-top: -10px;
+        }
+        .hotelicon img{
+          width: 50px;
+        }
+        .hotelname h1{
+            font-family: 'Dancing Script', cursive;
+            font-size: 40px;
+        }      
+        .navbar-links ul{
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar-links li{
+            list-style: none;
+        }
+        .navbar-links li a{
+             text-decoration: none;
+             margin-right: 40px;
+             padding: 6px;
+             display: block;
+             font-size: 15px;
+             color: black;
+             font-weight: bold;
+             font-size: 20px;
+             font-family: "Trebuchet MS", Helvetica, sans-serif;
+        } 
+        .navbar-links ul li a:hover{
+           color: orangered;
+        }  
+        .navbar-links li a button{
+             height: 38px;
+             padding: 0 10px;
+             border: 0;
+             background-color: orangered;
+             cursor: pointer;
+             color: #f1f1f1;
+             transition: .3s linear;
+             margin-right: 80px;
+             font-weight: bold;
+             margin-top: -5px;
+        }
+        .slider img{
+            width: 100%;
+            position: absolute;
+        }
+        .slidertitle{
+                width: 100%;
+                position: relative;
+        }
+        .slidertitle h1{
+                text-align: center;
+                color: white;
+                font-size: 4vw;
+                font-family: 'Lobster', cursive;
+                margin-top: 70px;
+                font-weight: bold;
+        }
+        .bookroom{
+        margin: 0 auto;
+        background: #eeede5;
+        padding: 20px;       
+        max-width: 90%;
+        margin-top: 180px;
+      }
+      .book{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+      .bookroom p{
+        font-family:  "Trebuchet MS", Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 13px;
+      }
+      .checkin{
+        margin-right: 30px;
+      }
+      .checkin input{
+        padding: 4px 8px;
+        color: #333333;
+        background-color: #fff;
+        border: 1px solid rgb(51, 51, 51);
+        cursor: pointer;
+        margin-top: -50px;
+        font-size: 14px;
+      }
+      .checkin input:focus,
+      .checkin input:hover{
+        outline: none;
+        border: 1px solid #bbbbbb;
+        transition: 1s;
+      }
+      .checkout{
+        margin-right: 30px;
+      }
+      .checkout input{
+        padding: 4px 8px;
+        color: #333333;
+        background-color: #fff;
+        border: 1px solid rgb(51, 51, 51);
+        cursor: pointer;
+        margin-top: -50px;
+        font-size: 14px;
+      }
+      .checkout input:focus,
+      .checkout input:hover{
+        outline: none;
+        border: 1px solid #bbbbbb; 
+        transition: 1s;       
+      }
+      .Adult{
+        margin-right: 30px;
+      }
+      .children{
+        margin-right: 30px;
+      }
+      .rooms{
+        margin-right: 20px;
+      }
+      .select{
+        margin-top: -50px;
+        padding: 6px 10px;
+        color: #333333;
+        background-color: #fff;
+        border: 1px solid rgb(51, 51, 51);
+        cursor: pointer;
+        font-size: 14px;
+      }
+      .select:focus,
+      .select:hover{
+        outline: none;
+        border: 1px solid #bbbbbb;
+        transition: 1s;
+      }
+      .check{
+        height: 40px;
+        padding: 0 10px;
+        border: 0;
+        background-color: orangered;
+        cursor: pointer;
+        color: #f1f1f1;
+        transition: .3s linear;
+        font-size: 12px;
+        font-family:  "Trebuchet MS", Helvetica, sans-serif;
+        margin-top: 30px;
+      }
+        .room{
+            padding-top: 60px;
+            padding-left: 100px;
+            padding-bottom: 160px;
+            background-color: #fcfafa;
+        }
+        .line1{
+        margin-top: -7px;
+        width: 80px;
+        background-color: orangered;
+        }
+        
+        .roomtitle h4{
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+            font-size: 19px;
+            color: orangered;
+        }
+        .roomtitle p{
+            font-family: 'Open Sans', sans-serif;
+            font-size: 12px;
+            margin-top: -10px;
+        }
+        .room-type1{
+            display: flex;
+        }
+        .room figcaption{
+               position: relative; 
+               font-family: 'Open Sans', sans-serif;      
+               background-color: white;
+               height: 130px; 
+               margin-top: -18px; 
+               padding-left: 20px; 
+               padding-top: 15px; 
+               padding-bottom: 15px;          
+           }
+        .room figcaption h5{
+            font-size: 17px;
+            font-weight: bold;
+        }
+        .room figcaption p{
+            font-size: 15px;
+            margin-top: 20px;
+            float: left;
+        }
+        .room figcaption header{
+            font-size: 12px;
+            margin-top: -8px;
+        }
+        .room figcaption a{
+            margin-left: 40px;
+            margin-top: 20px;
+            font-size: 14px;
+            position: absolute;
+        }
+         .room-btn{
+            padding: 8px 15px;
+             border: 0;
+             background-color: orangered;
+             cursor: pointer;
+             color: #f1f1f1;
+             transition: .3s linear;
+             margin-top: -5px;
+         }
+        .economy{
+            margin-right: 50px;
+        }
+        .deluxe{
+            margin-right: 50px;
+        }
+        .room-type2{
+            display: flex;
+            margin-top: 30px;
+        }
+        .family{
+            margin-right: 50px;
+        }
+        .business{
+            margin-right: 50px;
+        }
+        .suitetitle h4{
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+            margin-top: 60px;
+            font-size: 19px;
+            color: orangered;
+        }
+        .suitetitle p{
+            font-family: 'Open Sans', sans-serif;
+            font-size: 12px;
+            margin-top: -10px;
+        }
+        .suite-type1{
+            display: flex;
+        }
+        .room figcaption{
+               position: relative; 
+               font-family: 'Open Sans', sans-serif;      
+               background-color: white;
+               height: 130px; 
+               margin-top: -18px; 
+               padding-left: 20px; 
+               padding-top: 15px; 
+               padding-bottom: 15px;          
+           }
+        .room figcaption h5{
+            font-size: 17px;
+            font-weight: bold;
+        }
+        .room figcaption p{
+            font-size: 15px;
+            margin-top: 20px;
+            float: left;
+        }
+        .room figcaption header{
+            font-size: 12px;
+            margin-top: -8px;
+        }
+        .room figcaption a{
+            margin-left: 40px;
+            margin-top: 20px;
+            font-size: 14px;
+            position: absolute;
+        }
+         .room-btn{
+            padding: 8px 15px;
+             border: 0;
+             background-color: orangered;
+             cursor: pointer;
+             color: #f1f1f1;
+             transition: .3s linear;
+             margin-top: -5px;
+         }
+         .room-btn:hover{
+             opacity: 0.5;
+             transition-duration: 0.6s;
+             transition-timing-function: linear;
+         }
+        .royal{
+            margin-right: 50px;
+        }
+        .presidential{
+            margin-right: 50px;
+        }
+        .suite-type2{
+            display: flex;
+            margin-top: 30px;
+        }
+        .seaview{
+            margin-right: 50px;
+        }
+        .gardenview{
+            margin-right: 50px;
+        }
+        .foot-section{
+        padding-left: 60px;
+        padding-right: 100px;
+        padding-top: 60px;
+        padding-bottom: 40px;
+        background-color: lightseagreen;
+      }
+      .foot{
+        display: flex;
+      }
+      .footname{
+        margin-left: 50px;
+        margin-right: 150px;
+      }
+      .footname img{
+        width: 40px;
+      }
+      .footname h1{
+        margin-left: 50px;
+        margin-top: -35px;
+        font-family: 'Dancing Script', cursive;
+        font-size: 25px;
+        margin-bottom: 20px;
+      }
+      .footname p{
+        font-size: 15px;
+      }
+      .footname i{
+        height: 35px;
+        width: 35px;   
+        border-radius: 50%;
+        color: orangered; 
+        margin: 0px, 5px;
+        line-height: 35px;
+        text-align: center;
+        font-size: 25px;
+      }
+      .foot h3{
+        font-size: 17px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: orangered;
+      }
+      .foot a{
+        text-decoration: none;
+        color: black;
+        font-size: 15px;
+      }
+      .about{
+        margin-right: 80px;
+      }
+      .resources{
+        margin-right: 80px;
+      }
+      .contact{
+        margin-right: 80px;
+      }
+      .line{
+        height: 7px;
+        width: 80px;
+        background-color: orangered;
+        margin-top: -7px;
+      }
+      .copy{
+        align-items: center;
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar">     
+        <div class="hotelicon">
+          <img src="hotelicon.png">
+        </div>
+        <div class="hotelname">
+          <h1>LUX Resort</h1>
+         </div>
+        <a href="#" class="toggle-button">
+             <span class="bar"></span>
+             <span class="bar"></span>
+             <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+             <ul>
+                 <li><a href="hotel.html">HOME</a></li>
+                 <li><a href="hotelabout.html">ABOUT US</a></li>
+                 <li><a href="hotelroom.html">SUITES & ROOMS</a></li>
+                 <li><a href="hotelcontact.html">CONTACT US</a></li>
+                 <li><a href="hotelbook.html"><button>BOOK NOW</button></a></li>
+             </ul>
+        </div>
+   </nav>
+
+   <div class="slider">
+       <img src="hotelroomimg.jpg" width="100%" height="300px">
+   </div>
+   <div class="slidertitle">
+    <h1>Rooms & Suites</h1>
+   </div>
+
+   <div class="bookroom">
+    <div class="book">
+      <div class="checkin">
+        <p>CHECK IN</p>
+        <input type="date" placeholder="Input date" required>
+      </div>
+      <div class="checkout">
+        <p>CHECK OUT</p>
+        <input type="date" placeholder="Input date" required>
+      </div>
+      <div class="Adult">
+        <p>ADULT</p>
+        <select class="select">
+          <option disabled selected>No Of Adults</option>
+          <option value="1 Adult">1 Adult</option>
+          <option value="2 Adults">2 Adults</option>
+          <option value="3 Adults">3 Adults</option>
+          <option value="4 Adults">4 Adults</option>
+          <option value="Others">Others</option>
+        </select>  
+      </div>
+      <div class="children">
+          <p>CHILDREN</p>
+          <select class="select">
+            <option disabled selected> No Of Children</option>
+            <option value="1 CHILD">1 Child</option>
+            <option value="2 Children">2 Children</option>
+            <option value="3 Children">3 Children</option>
+            <option value="4 Children">4 Children</option>
+            <option value="Others">Others</option>
+          </select>  
+      </div>
+      <div class="rooms">
+        <p>ROOMS</p>
+        <select class="select">
+          <option disabled selected>No Of Rooms</option>
+          <option value="1 Room">1 Room</option>
+          <option value="2 Rooms">2 Rooms</option>
+          <option value="3 Rooms">3 Rooms</option>
+          <option value="4 Rooms">4 Rooms</option>
+          <option value="Others">Others</option>
+        </select>  
+      </div>           
+          <button class="check">CHECK AVAILABILITY</button>
+    </div>
+</div>
+
+   <div class="room">
+    <div class="roomtitle">
+        <h4>EXPLORE OUR ROOMS</h4>
+        <hr class="line1">
+        <P>CHOOSE ROOM ACCORDING TO BUDGET</P>
+    </div>
+    <div class="room-type1">
+         <div class="economy">
+            <img src="hoteleconomy.jpg" alt="" width="300px" height="180px">
+            <figcaption>
+                <h5>BUDGET ROOMS</h5>
+                <header>50x50 No View No balcony</header>
+                <p><strong>$65</strong>/Night</p>
+                <a href="hotelbudget.html"><button class="room-btn">VIEW DETAILS</button></a>              
+            </figcaption>
+         </div>
+         <div class="deluxe">
+            <img src="hoteldeluxe.jpeg" alt="" width="300px" height="180px">
+            <figcaption>
+                <h5>DELUXE ROOMS</h5>
+                <header>55X55 No View No balcony</header>
+                <p><strong>$80</strong>/Night</p>
+                <a href=""><button class="room-btn">VIEW DETAILS</button></a>              
+            </figcaption>
+         </div>
+         <div class="premium">
+            <img src="hotelpremium.jpeg" alt="" width="300px" height="180px">
+            <figcaption>
+                <h5>PREMIUM ROOMS</h5>
+                <header>55X55 City View No balcony</header>
+                <p><strong>$90</strong>/Night</p>
+                <a href=""><button class="room-btn">VIEW DETAILS</button></a>              
+            </figcaption>
+         </div>
+    </div>
+    <div class="room-type2">
+         <div class="family">
+            <img src="hotelfamily.jpeg" alt="" width="300px" height="180px">
+            <figcaption>
+                <h5>FAMILY ROOMS</h5>
+                <header>64x64 City View with a balcony</header>
+                <p><strong>$100</strong>/Night</p>
+                <a href=""><button class="room-btn">VIEW DETAILS</button></a>              
+            </figcaption>
+         </div>
+         <div class="business">
+            <img src="hotelbusinessclass.jpg" alt="" width="300px" height="180px">
+            <figcaption>
+                <h5>BUSINESS CLASS ROOMS</h5>
+                <header>65X65 Sea View 2 balcony</header>
+                <p><strong>$110</strong>/Night</p>
+                <a href=""><button class="room-btn">VIEW DETAILS</button></a>              
+            </figcaption>
+         </div>
+         <div class="executive">
+            <img src="hotelexecutive.jpg" alt="" width="300px" height="180px">
+            <figcaption>
+                <h5>EXECUTIVE ROOMS</h5>
+                <header>70X70 Sea View 2 balcony</header>
+                <p><strong>$90</strong>/Night</p>
+                <a href=""><button class="room-btn">VIEW DETAILS</button></a>              
+            </figcaption>
+         </div>
+    </div>
+    <div class="suitetitle">
+        <h4>EXPLORE OUR SUITES</h4>
+        <hr class="line">
+        <P>CHOOSE SUITE ACCORDING TO BUDGET</P>
+    </div>
+    <div class="suite-type1">
+         <div class="royal">
+            <img src="hotelroyal.jpg" alt="" width="300px" height="180px">
+            <figcaption>
+                <h5>GRAND ROYAL SUITES</h5>
+                <header>250X250 Prophet Square View 2 balcony</header>
+                <p><strong>$180</strong>/Night</p>
+                <a href=""><button class="room-btn">VIEW DETAILS</button></a>              
+            </figcaption>
+         </div>
+         <div class="presidential">
+            <img src="hotelpresidential.jpg" alt="" width="300px" height="180px">
+            <figcaption>
+                <h5>PRESIDENTIAL SUITES</h5>
+                <header>280x280 City View 2 balcony</header>
+                <p><strong>$190</strong>/Night</p>
+                <a href=""><button class="room-btn">VIEW DETAILS</button></a>              
+            </figcaption>
+         </div>
+         <div class="privatepool">
+            <img src="hotelprivatepool.jpg" alt="" width="300px" height="180px">
+            <figcaption>
+                <h5>PRIVATE POOL SUITES</h5>
+                <header>340X340 Pool View 2 balcony</header>
+                <p><strong>$220</strong>/Night</p>
+                <a href=""><button class="room-btn">VIEW DETAILS</button></a>              
+            </figcaption>
+         </div>
+    </div>
+    <div class="suite-type2">
+         <div class="seaview">
+            <img src="hotelseaview.jpg" alt="" width="300px" height="180px">
+            <figcaption>
+                <h5>SEA VIEW SUITES</h5>
+                <header>320x320 Sea View with 2 balcony</header>
+                <p><strong>$220</strong>/Night</p>
+                <a href=""><button class="room-btn">VIEW DETAILS</button></a>              
+            </figcaption>
+         </div>
+         <div class="gardenview">
+            <img src="hotelgardenview.jpg" alt="" width="300px" height="180px">
+            <figcaption>
+                <h5>GARDEN VIEW SUITES</h5>
+                <header>300X300 Sea View 2 balcony</header>
+                <p><strong>$220</strong>/Night</p>
+                <a href=""><button class="room-btn">VIEW DETAILS</button></a>              
+            </figcaption>
+         </div>
+         <div class="mountainview">
+            <img src="hotelmountainview.jpeg" alt="" width="300px" height="180px">
+            <figcaption>
+                <h5>GARDEN VIEW SUITES</h5>
+                <header>300X300 Sea View 2 balcony</header>
+                <p><strong>$220</strong>/Night</p>
+                <a href=""><button class="room-btn">VIEW DETAILS</button></a>              
+            </figcaption>
+         </div>
+    </div>
+   </div>
+      
+   <footer>
+    <div class="foot-section">
+      <div class="foot">
+        <div class="footname">
+          <img src="hotelicon.png"><h1>LUX Resort</h1>
+          <p>We offer you the best luxury resort with an impressive <br> history and discover your paradise.</p>
+          <a href=""><i class="fab fa-twitter fa-2x"></i></a>
+          <a href=""><i class="myinsta fab fa-instagram fa-2x"></i></a>
+          <a href=""><i class="fab fa-facebook fa-2x"></i></a>
+          <a href=""><i class="fab fa-snapchat fa-2x"></i></a>
+        </div>
+        <div class="about">
+            <h3>About Us</h3>
+            <p><a href="hotel.html">Home</a></p>
+            <p><a href="hotelabout.html">About Us</a></p>
+            <p><a href="">FAQs</a></p>
+            <p><a href="">Reviews</a></p>
+            <p><a href="">Stories</a></p>
+        </div>
+        <div class="resources">
+          <h3>Privacy</h3>
+          <p><a href="">Privacy</a></p>
+          <p><a href="">Policy</a></p>
+          <p><a href="">Payments</a></p>
+          <p><a href="">Terms</a></p>
+      </div>
+      <div class="contact">
+        <h3>Contact Us</h3>
+        <p> <a href="hotelabout.html">About Us</a></p>
+        <p> <a href="">Menu</a></p>
+        <p> <a href="hotelcontact.html">Contact</a></p>
+    </div>
+    </div>
+         <hr class="line">
+         <div class="copy">
+          <p>&copy; Copyright 2022. All Right reserved</p>
+         </div>
+    </div>
+  </footer>
+</body>
+</html>
